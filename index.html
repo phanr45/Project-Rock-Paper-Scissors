@@ -18,21 +18,20 @@
         }
 
 
-        function getPlayerChoice() {
+        function getHumanChoice() {
             let PlayerChoice = prompt("rock, paper or scissors")
-            PlayerChoice;
             return PlayerChoice.toLowerCase();
 
         }
 
 
-        const humanSelection = getPlayerChoice();
+        const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
 
 
 
         function playGame() {
-            let playerScore = 0;
+            let humanScore = 0;
             let computerScore = 0;
 
             function playRound(humanChoice, computerChoice) {
@@ -47,13 +46,13 @@
                 }
                 else if (humanChoice === "rock" && computerChoice === "scissors") {
                     console.log("human wins!")
-                    return playerScore++;
+                    return humanScore++;
                 }
 
 
                 else if (humanChoice === "paper" && computerChoice === "rock") {
                     console.log("Human Wins!")
-                    return playerScore++;
+                    return humanScore++;
                 }
                 else if (humanChoice === "paper" && computerChoice === "scissors") {
                     console.log("Computer Wins!")
@@ -66,7 +65,7 @@
                     return computerScore++;
                 } else if (humanChoice === "scissors" && computerChoice === "paper") {
                     console.log("Human Wins!")
-                    return playerScore++;
+                    return humanScore++;
                 } else {
                     console.log("enter valid answer")
                 }
@@ -77,20 +76,20 @@
             console.log("Starting game : Rock paper Scissors")
             playRound(humanSelection, computerSelection);
 
-            console.log("player score: " + playerScore, "computer score: " + computerScore)
-            playRound(getPlayerChoice(), getComputerChoice())
-            console.log("player score: " + playerScore, "computer score: " + computerScore)
-            playRound(getPlayerChoice(), getComputerChoice())
-            console.log("player score: " + playerScore, "computer score: " + computerScore)
-            playRound(getPlayerChoice(), getComputerChoice())
-            console.log("player score: " + playerScore, "computer score: " + computerScore)
-            playRound(getPlayerChoice(), getComputerChoice())
-            console.log("player score: " + playerScore, "computer score: " + computerScore)
+            console.log("player score: " + humanScore, "computer score: " + computerScore)
+            playRound(getHumanChoice(), getComputerChoice())
+            console.log("player score: " + humanScore, "computer score: " + computerScore)
+            playRound(getHumanChoice(), getComputerChoice())
+            console.log("player score: " + humanScore, "computer score: " + computerScore)
+            playRound(getHumanChoice(), getComputerChoice())
+            console.log("player score: " + humanScore, "computer score: " + computerScore)
+            playRound(getHumanChoice(), getComputerChoice())
+            console.log("player score: " + humanScore, "computer score: " + computerScore)
 
-            if (playerScore > computerScore) {
-                console.log("WINNER: PLAYER ONE !!!")
-            } else if (computerScore > playerScore) {
-                console.log("COMPUTER WINS!!!!")
+            if (humanScore > computerScore) {
+                console.log("WINNER: HUMAN !!!!!")
+            } else if (computerScore > humanScore) {
+                console.log("WINNER: COMPUTER !!!!")
             } else {
                 console.log("DRAW !!! : no one wins")
             }
